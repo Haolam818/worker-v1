@@ -1,7 +1,6 @@
 name: iOS Build
 on:
-  push:
-    branches: [ main ]  # 只有推送到 main 分支时才触发
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,7 +12,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
+          cache: npm
 
       - name: Install Dependencies
         run: npm install
