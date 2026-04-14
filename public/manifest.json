@@ -1,15 +1,18 @@
 {
-  "short_name": "WorkerApp",
-  "name": "Worker Management System",
+  "id": "/",
+  "short_name": "工人證登記",
+  "name": "工人證登記系統",
   "icons": [
     {
-      "src": "assets/icon.png",
+      "src": "https://s3plus.meituan.net/nocode-external/assets/nocode-logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "/www/app.html",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "landscape",
+  "theme_color": "#0f172a",
+  "background_color": "#eef4fb"
 }
