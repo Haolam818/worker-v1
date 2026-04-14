@@ -7,9 +7,24 @@
     <link rel="icon" type="image/png" href="https://s3plus.meituan.net/nocode-external/assets/nocode-logo.png">
     <link rel="apple-touch-icon" href="https://s3plus.meituan.net/nocode-external/assets/nocode-logo.png">
     <link rel="shortcut icon" href="https://s3plus.meituan.net/nocode-external/assets/nocode-logo.png">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+<script>
+  // 检查浏览器是否支持 Service Worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      // 注册脚本（脚本文件名为 sw.js，需要放在根目录）
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('PWA服务注册成功', reg))
+        .catch(err => console.log('PWA服务注册失败', err));
+    });
+  }
+</script>
